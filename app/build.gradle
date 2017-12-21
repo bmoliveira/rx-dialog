@@ -1,0 +1,31 @@
+apply plugin: 'com.android.application'
+apply from: '../common-dependencies.gradle'
+
+android {
+  compileSdkVersion libTargetSdk
+  buildToolsVersion buildToolsVersion
+
+  defaultConfig {
+    applicationId "com.broliveira.example.rx.dialog"
+    minSdkVersion 19
+    targetSdkVersion libTargetSdk
+    versionCode libVersionCode
+    versionName libVersion
+    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+}
+
+dependencies {
+  implementation project(':dialog')
+
+  implementation 'com.jakewharton.rxbinding2:rxbinding-kotlin:2.0.0'
+
+  implementation "com.android.support:appcompat-v7:$supportVersion"
+  implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+}

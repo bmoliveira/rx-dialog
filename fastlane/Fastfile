@@ -1,0 +1,21 @@
+fastlane_version "2.68.2"
+
+default_platform :android
+
+platform :android do
+  desc "Runs all the tests"
+  lane :test do
+    gradle(task: "test")
+  end
+
+  desc "Upload RxDialog"
+  lane :release_rx_dialog do
+    gradle(task: ":dialog:install")
+    gradle(task: ":dialog:bintrayUpload")
+  end
+
+  desc "Deploy all libs to maven"
+  lane :deploy do
+    release_rx_dialog
+  end
+end

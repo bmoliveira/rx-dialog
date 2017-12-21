@@ -1,0 +1,39 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+  ext.kotlinVersion = '1.2.10'
+  ext.supportVersion = '27.0.2'
+  ext.buildToolsVersion = '27.0.2'
+  ext.libVersionCode = 1
+  ext.libTargetSdk = 27
+  ext.ankoVersion = '0.10.1'
+  ext.rxJavaVersion = '2.1.0'
+  ext.rxKotlinVersion = '2.1.0'
+
+  ext.libVersion = '0.0.1'
+  ext.groupId = 'com.broliveira'
+  ext.mavenRepo = 'maven'
+
+  repositories {
+    google()
+    jcenter()
+  }
+  dependencies {
+    classpath 'com.android.tools.build:gradle:3.0.1'
+    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+    classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
+    classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+    classpath "org.jetbrains.dokka:dokka-android-gradle-plugin:0.9.15"
+  }
+}
+
+allprojects {
+  repositories {
+    google()
+    jcenter()
+  }
+}
+
+task clean(type: Delete) {
+  delete rootProject.buildDir
+}
