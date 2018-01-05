@@ -23,9 +23,9 @@ xcode-select --install
 fastlane android test
 ```
 Runs all the tests
-### android release_rx_dialog
+### android release_dialog_rx
 ```
-fastlane android release_rx_dialog
+fastlane android release_dialog_rx
 ```
 Upload RxDialog
 ### android deploy

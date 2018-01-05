@@ -4,15 +4,10 @@ buildscript {
   ext.kotlinVersion = '1.2.10'
   ext.supportVersion = '27.0.2'
   ext.buildToolsVersion = '27.0.2'
-  ext.libVersionCode = 1
   ext.libTargetSdk = 27
   ext.ankoVersion = '0.10.1'
   ext.rxJavaVersion = '2.1.0'
   ext.rxKotlinVersion = '2.1.0'
-
-  ext.libVersion = '0.0.1'
-  ext.groupId = 'com.broliveira'
-  ext.mavenRepo = 'maven'
 
   repositories {
     google()

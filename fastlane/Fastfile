@@ -9,13 +9,14 @@ platform :android do
   end
 
   desc "Upload RxDialog"
-  lane :release_rx_dialog do
-    gradle(task: ":dialog:install")
-    gradle(task: ":dialog:bintrayUpload")
+  lane :release_dialog_rx do
+    gradle(task: "clean")
+    gradle(task: ":dialog-rx:install")
+    gradle(task: ":dialog-rx:bintrayUpload")
   end
 
   desc "Deploy all libs to maven"
   lane :deploy do
-    release_rx_dialog
+    release_dialog_rx
   end
 end

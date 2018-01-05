@@ -1,18 +1,17 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 apply from: '../common-dependencies.gradle'
+apply from: 'https://gist.githubusercontent.com/bmoliveira/3d9c28aaaa737aba9ad5fd894603395b/raw/48c34ade38f142ec11325579d9c9cffc63586194/bintray-deploy.gradle'
 
 android {
   compileSdkVersion libTargetSdk
   buildToolsVersion buildToolsVersion
 
   defaultConfig {
-    applicationId "com.broliveira.example.rx.dialog"
     minSdkVersion 19
     targetSdkVersion libTargetSdk
-    versionCode 0
-    versionName "0"
     testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
   }
+
   buildTypes {
     release {
       minifyEnabled false
@@ -22,10 +21,7 @@ android {
 }
 
 dependencies {
-  implementation project(':dialog-rx')
-
-  implementation 'com.jakewharton.rxbinding2:rxbinding-kotlin:2.0.0'
-
+  implementation "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion"
+  implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
   implementation "com.android.support:appcompat-v7:$supportVersion"
-  implementation 'com.android.support.constraint:constraint-layout:1.0.2'
 }
